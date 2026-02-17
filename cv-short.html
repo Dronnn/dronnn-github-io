@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Andreas Maier, Senior iOS Engineer (1 page)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===================== BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  color: #1d1d1f;
+  background: #E8E8ED;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 40px 20px;
+}
+
+/* ===================== PAGE (A4 single) ===================== */
+.page {
+  width: 210mm;
+  height: 297mm;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================== HEADER (very compact) ===================== */
+.header {
+  background: linear-gradient(135deg, #0071e3 0%, #2997ff 50%, #64b5f6 100%);
+  padding: 18px 28px 14px;
+  color: #ffffff;
+  position: relative;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0071e3, #64b5f6, #0071e3);
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+.header-info { flex: 1; }
+.name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.title {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.2px;
+}
+.contacts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 400;
+  opacity: 0.92;
+  letter-spacing: 0.1px;
+}
+.contact-item svg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* ===================== CONTENT ===================== */
+.content {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* --- Left Column --- */
+.col-left {
+  width: 36%;
+  background: #F9FAFB;
+  padding: 16px 16px 16px 20px;
+  border-right: 1px solid #F0F0F3;
+}
+
+/* --- Right Column --- */
+.col-right {
+  width: 64%;
+  padding: 16px 20px 16px 20px;
+}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0071e3;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 2.5px solid #0071e3;
+  line-height: 1;
+}
+
+.section-block {
+  margin-bottom: 12px;
+}
+.section-block:last-child {
+  margin-bottom: 0;
+}
+
+/* ===================== PROFILE ===================== */
+.profile-text {
+  font-size: 10px;
+  color: #374151;
+  line-height: 1.45;
+}
+
+/* ===================== EDUCATION ===================== */
+.edu-item {
+  margin-bottom: 2px;
+}
+.edu-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1d1d1f;
+  line-height: 1.35;
+}
+.edu-detail {
+  font-size: 10px;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+/* ===================== SKILL PILLS ===================== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.skill-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #EBF5FF;
+  color: #0051a8;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.05px;
+  line-height: 1.3;
+}
+
+/* ===================== LANGUAGES ===================== */
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  margin-bottom: 1px;
+}
+.lang-name {
+  color: #374151;
+  font-weight: 500;
+}
+.lang-level {
+  color: #9CA3AF;
+  font-weight: 400;
+  font-size: 9.5px;
+}
+
+/* ===================== TIMELINE ===================== */
+.timeline {
+  position: relative;
+  padding-left: 18px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  bottom: 4px;
+  width: 1.5px;
+  background: linear-gradient(180deg, #0071e3, #a8d4ff);
+  border-radius: 1px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 10px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -18px;
+  top: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #0071e3;
+  z-index: 1;
+}
+.timeline-item:first-child .timeline-dot {
+  background: #0071e3;
+  border-color: #0071e3;
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.15);
+}
+.timeline-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 1px;
+}
+.timeline-date {
+  font-size: 9px;
+  font-weight: 600;
+  color: #0071e3;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.timeline-role {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.3;
+}
+.timeline-org {
+  font-size: 9.5px;
+  font-weight: 500;
+  color: #6B7280;
+  margin-bottom: 2px;
+}
+.timeline-tasks {
+  list-style: none;
+}
+.timeline-tasks li {
+  font-size: 9.5px;
+  color: #4B5563;
+  line-height: 1.4;
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 0;
+}
+.timeline-tasks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #D1D5DB;
+}
+
+/* ===================== EARLIER ROLES ===================== */
+.earlier-text {
+  font-size: 9.5px;
+  color: #6B7280;
+  line-height: 1.4;
+  margin-top: 8px;
+  padding-left: 0;
+  font-style: italic;
+}
+
+/* ===================== KEY PROJECTS ===================== */
+.projects-list {
+  list-style: none;
+}
+.projects-list li {
+  font-size: 10px;
+  color: #374151;
+  padding: 2px 0;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.35;
+}
+.projects-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a8d4ff;
+}
+.projects-list .project-name {
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+/* ===================== FOOTER BAR ===================== */
+.page-footer {
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 9.5px;
+  color: #9CA3AF;
+  border-top: 1px solid #F3F4F6;
+  letter-spacing: 0.2px;
+}
+
+/* ===================== PRINT STYLES ===================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    padding: 0;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    min-height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  /* --- Header --- */
+  .header {
+    background: linear-gradient(135deg, #0071e3 0%, #2997ff 50%, #64b5f6 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Left column background --- */
+  .col-left {
+    background: #F9FAFB !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Skills --- */
+  .skill-pill {
+    background: #EBF5FF !important;
+    color: #0051a8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Section title colors --- */
+  .section-title {
+    color: #0071e3 !important;
+    border-left-color: #0071e3 !important;
+  }
+
+  /* --- Timeline colors --- */
+  .timeline-dot {
+    border-color: #0071e3 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .timeline-item:first-child .timeline-dot {
+    background: #0071e3 !important;
+  }
+  .timeline::before {
+    background: linear-gradient(180deg, #0071e3, #a8d4ff) !important;
+  }
+
+  /* --- Stretch columns to fill the page --- */
+  .col-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- No page breaks — everything on one page --- */
+  .page, .section-block, .timeline-item, .edu-item, .page-footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 800px) {
+  body { padding: 16px 8px; }
+  .page { border-radius: 8px; }
+  .header { padding: 16px 20px 12px; }
+  .header-top { flex-direction: column; text-align: center; gap: 10px; }
+  .contacts-row { justify-content: center; }
+  .content { flex-direction: column; }
+  .col-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #F0F0F3;
+    padding: 16px;
+  }
+  .col-right {
+    width: 100%;
+    padding: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <div class="header">
+    <div class="header-top">
+      <img src="ava.jpeg" alt="Andreas Maier" class="photo">
+      <div class="header-info">
+        <div class="name">Andreas Maier</div>
+        <div class="title">Senior iOS Engineer &middot; 13+ years</div>
+      </div>
+    </div>
+    <div class="contacts-row">
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Yerevan, Armenia
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +374-43-057-447
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        hello@mrmaier.com
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        cv.mrmaier.com
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/andreymayer
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        github.com/Dronnn
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        t.me/AndreasRobertMaier
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ CONTENT (two columns) ============ -->
+  <div class="content">
+
+    <!-- ---- LEFT COLUMN ---- -->
+    <div class="col-left">
+
+      <!-- Profile -->
+      <div class="section-block">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">Senior iOS Engineer with 13+ years building production apps across fintech, telecom, AR, and edtech. Shipped apps serving millions of daily users.</p>
+      </div>
+
+      <!-- Skills -->
+      <div class="section-block">
+        <div class="section-title">Skills</div>
+        <div class="skills-grid">
+          <span class="skill-pill">Swift</span>
+          <span class="skill-pill">Objective-C</span>
+          <span class="skill-pill">SwiftUI</span>
+          <span class="skill-pill">UIKit</span>
+          <span class="skill-pill">Combine</span>
+          <span class="skill-pill">Swift Concurrency</span>
+          <span class="skill-pill">CoreData</span>
+          <span class="skill-pill">ARKit</span>
+          <span class="skill-pill">StoreKit</span>
+          <span class="skill-pill">MVVM</span>
+          <span class="skill-pill">VIPER</span>
+          <span class="skill-pill">Clean Architecture</span>
+          <span class="skill-pill">REST API</span>
+          <span class="skill-pill">Realm</span>
+          <span class="skill-pill">XCTest</span>
+          <span class="skill-pill">Xcode</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">SPM</span>
+          <span class="skill-pill">Fastlane</span>
+          <span class="skill-pill">CI/CD</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section-block">
+        <div class="section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">B2-C1</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Russian</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">German</span>
+          <span class="lang-level">Elementary</span>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section-block">
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-name">PhD, Computer Science</div>
+          <div class="edu-detail">KSPU &middot; 2000 - 2003</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">MSc, CS & Economics</div>
+          <div class="edu-detail">KSPU &middot; 1995 - 2000</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ---- RIGHT COLUMN ---- -->
+    <div class="col-right">
+
+      <div class="section-block">
+        <div class="section-title">Experience</div>
+
+        <div class="timeline">
+
+          <!-- Job 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">May 2023 - Present</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">The Origin AG</div>
+            <ul class="timeline-tasks">
+              <li>OfflineDay (iPhone, iPad, Mac, Vision Pro), CocoonWeaver</li>
+              <li>SwiftUI, Combine, async/await, MVVM</li>
+            </ul>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Jan 2023 - Present</div>
+            </div>
+            <div class="timeline-role">Tutor & Author, iOS Courses</div>
+            <div class="timeline-org">Yandex Practicum</div>
+            <ul class="timeline-tasks">
+              <li>Revamped Core Data curriculum, mentored 50+ students</li>
+            </ul>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Jan 2023 - Apr 2023</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Tinkoff</div>
+            <ul class="timeline-tasks">
+              <li>Deep linking, UI improvements</li>
+            </ul>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Apr 2022 - Jan 2023</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Preezma</div>
+            <ul class="timeline-tasks">
+              <li>CocoonWeaver remaster, StoreKit subscriptions</li>
+            </ul>
+          </div>
+
+          <!-- Job 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Nov 2020 - Apr 2022</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Alfabank</div>
+            <ul class="timeline-tasks">
+              <li>Payment modules, QR-payments, 10M+ MAU app</li>
+            </ul>
+          </div>
+
+          <!-- Job 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Nov 2019 - Nov 2020</div>
+            </div>
+            <div class="timeline-role">iOS Developer</div>
+            <div class="timeline-org">8bit</div>
+            <ul class="timeline-tasks">
+              <li>10+ apps from scratch, architecture design</li>
+            </ul>
+          </div>
+
+          <!-- Job 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Jun 2018 - Nov 2019</div>
+            </div>
+            <div class="timeline-role">iOS Developer</div>
+            <div class="timeline-org">Mirror-AI</div>
+            <ul class="timeline-tasks">
+              <li>AR emoji app, complete relaunch</li>
+            </ul>
+          </div>
+
+          <!-- Earlier -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">2013 - 2018</div>
+            </div>
+            <div class="timeline-role">iOS Developer</div>
+            <div class="timeline-org">RedMadRobot, Globus, Ronte, UnrealMojo, Zennex</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section-block">
+        <div class="section-title">Key Projects</div>
+        <ul class="projects-list">
+          <li><span class="project-name">OfflineDay</span> — digital detox (iPhone, iPad, Mac, Vision Pro)</li>
+          <li><span class="project-name">AlfaBank Mobile</span> — banking, 10M+ users</li>
+          <li><span class="project-name">Megafon</span> — telecom, 20M+ subscribers</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="page-footer">
+    Andreas Maier — CV 2025 &middot; cv.mrmaier.com
+  </div>
+
+</div>
+
+</body>
+</html>

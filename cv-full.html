@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andreas Maier — Full CV 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===================== BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  color: #1d1d1f;
+  background: #E8E8ED;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 40px 20px;
+}
+
+/* ===================== PAGE (A4) ===================== */
+.page {
+  width: 210mm;
+  max-width: 100%;
+  margin: 0 auto 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ===================== HEADER (full — page 1) ===================== */
+.header {
+  background: linear-gradient(135deg, #0071e3 0%, #2997ff 50%, #64b5f6 100%);
+  padding: 18px 28px 14px;
+  color: #ffffff;
+  position: relative;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0071e3, #64b5f6, #0071e3);
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+.header-info { flex: 1; }
+.name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.title {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.2px;
+}
+.contacts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 400;
+  opacity: 0.92;
+  letter-spacing: 0.1px;
+}
+.contact-item svg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===================== HEADER-MINI (page 2+) ===================== */
+.header-mini {
+  background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%);
+  padding: 8px 28px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.header-mini::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0071e3, #64b5f6, #0071e3);
+}
+.header-mini .name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin-bottom: 0;
+}
+.header-mini .title {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* ===================== CONTENT ===================== */
+.content {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* --- Left Column --- */
+.col-left {
+  width: 36%;
+  background: #F9FAFB;
+  padding: 18px 16px 18px 20px;
+  border-right: 1px solid #F0F0F3;
+}
+
+/* --- Right Column --- */
+.col-right {
+  width: 64%;
+  padding: 18px 20px 18px 20px;
+}
+
+/* --- Full-width content (page 2+) --- */
+.content-full {
+  padding: 18px 28px;
+  flex: 1;
+}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0071e3;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 2.5px solid #0071e3;
+  line-height: 1;
+}
+
+.section-block {
+  margin-bottom: 12px;
+}
+.section-block:last-child {
+  margin-bottom: 0;
+}
+
+/* ===================== PROFILE ===================== */
+.profile-text {
+  font-size: 10px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* ===================== EDUCATION ===================== */
+.edu-item {
+  margin-bottom: 4px;
+}
+.edu-item:last-child {
+  margin-bottom: 0;
+}
+.edu-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1d1d1f;
+  line-height: 1.35;
+}
+.edu-detail {
+  font-size: 9.5px;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+/* ===================== SKILL PILLS ===================== */
+.skills-category {
+  margin-bottom: 6px;
+}
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+.skills-category-label {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.skill-pill {
+  display: inline-block;
+  padding: 2px 7px;
+  background: #EBF5FF;
+  color: #0051a8;
+  border-radius: 20px;
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.05px;
+  line-height: 1.4;
+}
+
+/* ===================== LANGUAGES ===================== */
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+.lang-item:last-child {
+  margin-bottom: 0;
+}
+.lang-name {
+  color: #374151;
+  font-weight: 500;
+}
+.lang-level {
+  color: #9CA3AF;
+  font-weight: 400;
+  font-size: 9px;
+}
+
+/* ===================== TIMELINE ===================== */
+.timeline {
+  position: relative;
+  padding-left: 16px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  bottom: 4px;
+  width: 1.5px;
+  background: linear-gradient(180deg, #0071e3, #93c5fd);
+  border-radius: 1px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 12px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -16px;
+  top: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #0071e3;
+  z-index: 1;
+}
+.timeline-item:first-child .timeline-dot {
+  background: #0071e3;
+  border-color: #0071e3;
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.15);
+}
+.timeline-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+}
+.timeline-date {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #0071e3;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.timeline-role {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.3;
+}
+.timeline-org {
+  font-size: 9px;
+  font-weight: 500;
+  color: #6B7280;
+  margin-bottom: 2px;
+}
+.timeline-projects {
+  font-size: 9px;
+  color: #6B7280;
+  font-style: italic;
+  margin-bottom: 2px;
+}
+.timeline-tech {
+  font-size: 8.5px;
+  color: #9CA3AF;
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+.timeline-results {
+  font-size: 9px;
+  color: #4B5563;
+  line-height: 1.45;
+}
+.timeline-results li {
+  list-style: none;
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 0;
+}
+.timeline-results li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #D1D5DB;
+}
+
+/* ===================== NOTABLE PROJECTS ===================== */
+.projects-list {
+  list-style: none;
+}
+.projects-list li {
+  font-size: 9.5px;
+  color: #374151;
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.projects-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%230071e3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='9' y1='3' x2='9' y2='21'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.project-name-inline {
+  font-weight: 600;
+  color: #1d1d1f;
+}
+.project-link {
+  color: #0071e3;
+  text-decoration: none;
+  font-size: 8.5px;
+}
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* ===================== FOOTER BAR ===================== */
+.page-footer {
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 9px;
+  color: #9CA3AF;
+  border-top: 1px solid #F3F4F6;
+  letter-spacing: 0.2px;
+  margin-top: auto;
+}
+
+/* ===================== PRINT STYLES ===================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    padding: 0;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .page:last-of-type {
+    page-break-after: auto;
+  }
+
+  /* --- Header --- */
+  .header {
+    background: linear-gradient(135deg, #0071e3 0%, #2997ff 50%, #64b5f6 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .header-mini {
+    background: linear-gradient(135deg, #0071e3 0%, #2997ff 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Left column background --- */
+  .col-left {
+    background: #F9FAFB !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Skills --- */
+  .skill-pill {
+    background: #EBF5FF !important;
+    color: #0051a8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Section title colors --- */
+  .section-title {
+    color: #0071e3 !important;
+    border-left-color: #0071e3 !important;
+  }
+
+  /* --- Timeline colors --- */
+  .timeline-dot {
+    border-color: #0071e3 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .timeline-item:first-child .timeline-dot {
+    background: #0071e3 !important;
+  }
+  .timeline::before {
+    background: linear-gradient(180deg, #0071e3, #93c5fd) !important;
+  }
+
+  /* --- No page breaks inside items --- */
+  .section-block, .timeline-item, .edu-item, .page-footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 800px) {
+  body { padding: 16px 8px; }
+  .page { border-radius: 8px; }
+  .header { padding: 16px 20px 12px; }
+  .header-top { flex-direction: column; text-align: center; gap: 10px; }
+  .contacts-row { justify-content: center; }
+  .content { flex-direction: column; }
+  .col-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #F0F0F3;
+    padding: 16px;
+  }
+  .col-right {
+    width: 100%;
+    padding: 16px;
+  }
+  .content-full {
+    padding: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- PAGE 1 — Header + Overview + Start of Experience                 -->
+<!-- ================================================================ -->
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <div class="header">
+    <div class="header-top">
+      <img src="ava.jpeg" alt="Andreas Maier" class="photo">
+      <div class="header-info">
+        <div class="name">Andreas Maier</div>
+        <div class="title">Senior iOS Engineer &middot; 13+ years in Apple Ecosystem</div>
+      </div>
+    </div>
+    <div class="contacts-row">
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Yerevan, Armenia
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+37443057447">+374-43-057-447</a>
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:hello@mrmaier.com">hello@mrmaier.com</a>
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <a href="https://cv.mrmaier.com">cv.mrmaier.com</a>
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://linkedin.com/in/andreymayer">linkedin.com/in/andreymayer</a>
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <a href="https://github.com/Dronnn">github.com/Dronnn</a>
+      </span>
+      <span class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <a href="https://t.me/AndreasRobertMaier">t.me/AndreasRobertMaier</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ CONTENT (two columns) ============ -->
+  <div class="content">
+
+    <!-- ---- LEFT COLUMN ---- -->
+    <div class="col-left">
+
+      <!-- Profile -->
+      <div class="section-block">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">Senior iOS Engineer with 13+ years building production apps across fintech, telecom, AR, and edtech. Shipped apps serving millions of daily users at Alfabank, Megafon, and Yandex. Passionate about clean architecture, mentoring, and shipping polished user experiences.</p>
+      </div>
+
+      <!-- Skills -->
+      <div class="section-block">
+        <div class="section-title">Skills</div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Languages</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Swift</span>
+            <span class="skill-pill">Objective-C</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">UI</div>
+          <div class="skills-grid">
+            <span class="skill-pill">SwiftUI</span>
+            <span class="skill-pill">UIKit</span>
+            <span class="skill-pill">Auto Layout</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Frameworks</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Combine</span>
+            <span class="skill-pill">Swift Concurrency</span>
+            <span class="skill-pill">CoreData</span>
+            <span class="skill-pill">ARKit</span>
+            <span class="skill-pill">WatchKit</span>
+            <span class="skill-pill">StoreKit</span>
+            <span class="skill-pill">Push Notifications</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Architecture</div>
+          <div class="skills-grid">
+            <span class="skill-pill">MVVM</span>
+            <span class="skill-pill">VIPER</span>
+            <span class="skill-pill">Clean Architecture</span>
+            <span class="skill-pill">MVC</span>
+            <span class="skill-pill">Coordinator</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Data</div>
+          <div class="skills-grid">
+            <span class="skill-pill">REST API</span>
+            <span class="skill-pill">URLSession</span>
+            <span class="skill-pill">JSON/Codable</span>
+            <span class="skill-pill">Realm</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">WebSocket</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Testing</div>
+          <div class="skills-grid">
+            <span class="skill-pill">XCTest</span>
+            <span class="skill-pill">Unit Testing</span>
+            <span class="skill-pill">UI Testing</span>
+            <span class="skill-pill">Snapshot Testing</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Tools</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Xcode</span>
+            <span class="skill-pill">Instruments</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">SPM</span>
+            <span class="skill-pill">CocoaPods</span>
+            <span class="skill-pill">Fastlane</span>
+            <span class="skill-pill">GitHub Actions</span>
+            <span class="skill-pill">CircleCI</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-label">Collaboration</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">Confluence</span>
+            <span class="skill-pill">Figma</span>
+            <span class="skill-pill">Code Review</span>
+            <span class="skill-pill">Mentoring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section-block">
+        <div class="section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Upper-Intermediate (B2-C1)</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Russian</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">German</span>
+          <span class="lang-level">Elementary</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Armenian</span>
+          <span class="lang-level">Elementary</span>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section-block">
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-name">Associated Professor / PhD candidate</div>
+          <div class="edu-detail">Computer Science</div>
+          <div class="edu-detail">Krasnoyarsk State Pedagogical University</div>
+          <div class="edu-detail">2000 - 2003</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">Teacher of Computer Science and Economics</div>
+          <div class="edu-detail">Krasnoyarsk State Pedagogical University</div>
+          <div class="edu-detail">1995 - 2000</div>
+        </div>
+      </div>
+
+      <!-- Teaching -->
+      <div class="section-block">
+        <div class="section-title">Teaching</div>
+        <div class="edu-detail">15+ years as university professor of Computer Science</div>
+      </div>
+
+    </div>
+
+    <!-- ---- RIGHT COLUMN ---- -->
+    <div class="col-right">
+
+      <div class="section-block">
+        <div class="section-title">Experience</div>
+
+        <div class="timeline">
+
+          <!-- 1. The Origin AG -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">May 2023 - Present</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">The Origin AG &middot; Office</div>
+            <div class="timeline-projects">Projects: CocoonWeaver voice notes app, OfflineDay digital detox app</div>
+            <div class="timeline-tech">Swift, SwiftUI, UIKit, async/await, Combine, Compositional Layout, REST API, Realm, MVVM</div>
+            <ul class="timeline-results">
+              <li>Built OfflineDay digital detox app from scratch (iPhone, iPad, Mac, Vision Pro)</li>
+              <li>Maintained and enhanced CocoonWeaver voice notes app</li>
+              <li>Introduced SwiftUI components and modern concurrency patterns</li>
+            </ul>
+          </div>
+
+          <!-- 2. Yandex Practicum -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Jan 2023 - Present</div>
+            </div>
+            <div class="timeline-role">Tutor and Author of iOS Development Courses</div>
+            <div class="timeline-org">Yandex Practicum &middot; Remote</div>
+            <div class="timeline-tech">Swift, UIKit, CoreData, MVVM, XCTest</div>
+            <ul class="timeline-results">
+              <li>Revamped Core Data curriculum chapter from scratch, improving completion rates</li>
+              <li>Authored new course modules on testing and localization</li>
+              <li>Conduct regular live webinars with growing attendance</li>
+              <li>Mentored 50+ students through code reviews and 1-on-1 sessions</li>
+            </ul>
+          </div>
+
+          <!-- 3. Tinkoff -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Jan 2023 - Apr 2023</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Tinkoff &middot; Remote</div>
+            <div class="timeline-tech">Swift, UIKit, REST API, CoreData, MVP</div>
+            <ul class="timeline-results">
+              <li>Implemented deep linking system enabling seamless in-app navigation</li>
+              <li>Delivered UI improvements for key user-facing screens</li>
+            </ul>
+          </div>
+
+          <!-- 4. Preezma -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Apr 2022 - Jan 2023</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Preezma &middot; Office</div>
+            <div class="timeline-tech">Swift, UIKit, async/await, Compositional Layout, REST API, Realm, MVP</div>
+            <ul class="timeline-results">
+              <li>Led remaster of CocoonWeaver's core screens, improving reusability</li>
+              <li>Implemented subscription system with StoreKit</li>
+              <li>Migrated legacy networking to async/await</li>
+            </ul>
+          </div>
+
+          <!-- 5. Alfabank -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Nov 2020 - Apr 2022</div>
+            </div>
+            <div class="timeline-role">Senior iOS Developer</div>
+            <div class="timeline-org">Alfabank &middot; Remote</div>
+            <div class="timeline-tech">Swift, UIKit, REST API, YARCH Architecture</div>
+            <ul class="timeline-results">
+              <li>Developed Swift-based payment module serving millions of banking app users</li>
+              <li>Implemented QR-payment system with modern scanning library</li>
+              <li>Built document upload feature for loan applications</li>
+              <li>Contributed to app used by 10M+ monthly active users</li>
+            </ul>
+          </div>
+
+          <!-- 6. 8bit -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="timeline-date">Nov 2019 - Nov 2020</div>
+            </div>
+            <div class="timeline-role">iOS Developer</div>
+            <div class="timeline-org">8bit &middot; Remote</div>
+            <div class="timeline-tech">Swift, UIKit, REST API, MVC, CoreAnimation</div>
+            <ul class="timeline-results">
+              <li>Architected and shipped 10+ iOS apps from scratch incl. VPN clients</li>
+              <li>Designed reusable architecture templates adopted across all new projects</li>
+              <li>Sole iOS developer on multiple concurrent products</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="page-footer">
+    Andreas Maier — Full CV 2025 &middot; cv.mrmaier.com &middot; Page 1
+  </div>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 2 — Remaining Experience + Notable Projects                 -->
+<!-- ================================================================ -->
+<div class="page">
+
+  <!-- ============ MINI HEADER ============ -->
+  <div class="header-mini">
+    <div class="name">Andreas Maier</div>
+    <div class="title">Senior iOS Engineer &middot; 13+ years in Apple Ecosystem</div>
+  </div>
+
+  <!-- ============ CONTENT ============ -->
+  <div class="content-full">
+
+    <div class="section-block">
+      <div class="section-title">Experience (continued)</div>
+
+      <div class="timeline">
+
+        <!-- 7. Mirror-AI -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Jun 2018 - Nov 2019</div>
+          </div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-org">Mirror-AI &middot; California, Remote</div>
+          <div class="timeline-tech">Swift, REST API, CoreData, ARKit, Vision</div>
+          <ul class="timeline-results">
+            <li>Led complete app relaunch with redesigned architecture</li>
+            <li>Implemented AR-powered facial mapping for personalized emoji generation</li>
+            <li>Built custom sticker pack system with iMessage integration</li>
+            <li>App featured in App Store editorial</li>
+          </ul>
+        </div>
+
+        <!-- 8. Ronte LTD -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Oct 2017 - Jun 2018</div>
+          </div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-org">Ronte LTD &middot; Berlin, Remote</div>
+          <div class="timeline-tech">Swift, UIKit, REST API, Realm, VIPER</div>
+          <ul class="timeline-results">
+            <li>Built real-time messaging module for B2B platform</li>
+            <li>Implemented offline-first architecture with Realm sync</li>
+          </ul>
+        </div>
+
+        <!-- 9. RedMadRobot -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Jul 2016 - Oct 2017</div>
+          </div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-org">RedMadRobot &middot; Remote</div>
+          <div class="timeline-tech">Swift, REST API, RxSwift, MVVM</div>
+          <ul class="timeline-results">
+            <li>Developed multiple client projects from scratch at a top Russian digital agency</li>
+            <li>Introduced reactive programming patterns with RxSwift</li>
+          </ul>
+        </div>
+
+        <!-- 10. Globus LTD -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Mar 2016 - Jun 2017</div>
+          </div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-org">Globus LTD &middot; Remote</div>
+          <div class="timeline-tech">Objective-C, Swift, REST API, Realm, CoreAnimation</div>
+          <ul class="timeline-results">
+            <li>Led iOS development and established code review practices</li>
+            <li>Screened and interviewed developer candidates</li>
+            <li>Supervised junior developers and interns</li>
+          </ul>
+        </div>
+
+        <!-- 11. UnrealMojo -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Sep 2014 - Mar 2016</div>
+          </div>
+          <div class="timeline-role">Middle iOS Developer</div>
+          <div class="timeline-org">UnrealMojo &middot; Remote</div>
+          <div class="timeline-tech">Objective-C, REST API, CoreData, WatchKit</div>
+          <ul class="timeline-results">
+            <li>Developed Megafon Personal Account app as sole iOS engineer</li>
+            <li>Built Apple Watch companion app</li>
+            <li>Shipped features serving 20M+ subscribers</li>
+          </ul>
+        </div>
+
+        <!-- 12. Zennex -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-date">Feb 2013 - Aug 2014</div>
+          </div>
+          <div class="timeline-role">Junior iOS Developer</div>
+          <div class="timeline-org">Zennex &middot; Remote</div>
+          <div class="timeline-tech">Objective-C, REST API, CoreData, SQL</div>
+          <ul class="timeline-results">
+            <li>First professional iOS role. Built multiple client apps from scratch</li>
+            <li>Established foundation in iOS development, networking, and data persistence</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Notable Projects -->
+    <div class="section-block" style="margin-top: 16px;">
+      <div class="section-title">Notable Projects</div>
+
+      <ul class="projects-list">
+        <li>
+          <span class="project-name-inline">OfflineDay</span> — Digital detox app with monthly offline retreats, timer, 30+ challenges. iPhone, iPad, Mac, Apple Vision Pro.
+          <a href="https://apps.apple.com/ch/app/offlineday/id6744646576" class="project-link" target="_blank" rel="noopener">App Store</a>
+        </li>
+        <li>
+          <span class="project-name-inline">CocoonWeaver</span> — Voice notes app. iPhone, Apple Watch.
+          <a href="https://apps.apple.com/ru/app/cocoonweaver-voice-your-self/id1464144628?l=en" class="project-link" target="_blank" rel="noopener">App Store</a>
+        </li>
+        <li>
+          <span class="project-name-inline">AlfaBank Mobile</span> — Mobile banking, 10M+ monthly users. iPhone, iPad.
+        </li>
+        <li>
+          <span class="project-name-inline">Mirror: Avatar &amp; Sticker Maker</span> — AR-powered emoji from selfies. iPhone.
+        </li>
+        <li>
+          <span class="project-name-inline">Yandex.Weather</span> — Weather service. iPhone, iPad.
+        </li>
+        <li>
+          <span class="project-name-inline">SberBank FinAdvisor</span> — Financial advisory tool. iPhone.
+        </li>
+        <li>
+          <span class="project-name-inline">Tele 2 TV</span> — Video streaming. iPhone, iPad.
+        </li>
+        <li>
+          <span class="project-name-inline">Megafon Personal Account</span> — Telecom app, 20M+ subscribers. iPhone, iPad, Watch.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="page-footer">
+    Andreas Maier — Full CV 2025 &middot; cv.mrmaier.com &middot; Page 2
+  </div>
+
+</div>
+
+</body>
+</html>
