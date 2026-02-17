@@ -88,7 +88,7 @@ Happily married with three boys. Enjoys traveling, learning new languages, readi
 
 ## Hello!  
 
-<img src="https://dronnn.github.io/ava.jpeg" alt="It's me" width="100"/>  
+<img src="ava.jpeg" alt="It's me" width="100"/>  
 
 I'm Andrew, an iOS engineer who's been living and breathing Apple's ecosystem for over 11 years.  
 I've worked with companies of all shapes and sizes, and my code has reached millions of users worldwide.
