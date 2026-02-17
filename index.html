@@ -57,6 +57,31 @@
             --color-footer-text: #6e6e73;
         }
 
+        /* Auto dark theme from OS (before JS loads, prevents flash) */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --color-bg: #1d1d1f;
+                --color-bg-alt: #2d2d2f;
+                --color-surface: #2d2d2f;
+                --color-text: #f5f5f7;
+                --color-text-secondary: #a1a1a6;
+                --color-text-tertiary: #6e6e73;
+                --color-accent: #2997ff;
+                --color-accent-hover: #40a8ff;
+                --color-accent-light: #64b5f6;
+                --color-accent-soft: rgba(41, 151, 255, 0.12);
+                --color-accent-glow: rgba(41, 151, 255, 0.25);
+                --color-border: rgba(255, 255, 255, 0.08);
+                --color-border-card: rgba(255, 255, 255, 0.06);
+                --color-header-bg: rgba(29, 29, 31, 0.72);
+                --color-header-border: rgba(255, 255, 255, 0.08);
+                --color-card-shadow: rgba(0, 0, 0, 0.2);
+                --color-card-shadow-hover: rgba(0, 0, 0, 0.3);
+                --color-footer-bg: #000000;
+                --color-footer-text: #6e6e73;
+            }
+        }
+
         /* ===== Reset & Base ===== */
         *, *::before, *::after {
             margin: 0;
@@ -1952,12 +1977,18 @@
             applyAccent(savedAccent);
         }
 
-        // System preference change listener
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // System preference change listener (with fallback for older Safari)
+        var darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+        function onSystemThemeChange(e) {
             if (currentMode === 'system') {
                 applyTheme(e.matches ? 'dark' : 'light');
             }
-        });
+        }
+        if (darkMQ.addEventListener) {
+            darkMQ.addEventListener('change', onSystemThemeChange);
+        } else if (darkMQ.addListener) {
+            darkMQ.addListener(onSystemThemeChange);
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             // Mark active theme option on load
