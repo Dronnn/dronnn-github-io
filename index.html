@@ -19,11 +19,11 @@
             --color-text: #1d1d1f;
             --color-text-secondary: #86868b;
             --color-text-tertiary: #a1a1a6;
-            --color-accent: #0071e3;
-            --color-accent-hover: #0060c0;
-            --color-accent-light: #40a0ff;
-            --color-accent-soft: rgba(0, 113, 227, 0.08);
-            --color-accent-glow: rgba(0, 113, 227, 0.2);
+            --color-accent: #4A6380;
+            --color-accent-hover: #3A5370;
+            --color-accent-light: #7A93A8;
+            --color-accent-soft: rgba(74, 99, 128, 0.08);
+            --color-accent-glow: rgba(74, 99, 128, 0.2);
             --color-border: rgba(0, 0, 0, 0.06);
             --color-border-card: rgba(0, 0, 0, 0.04);
             --color-header-bg: rgba(255, 255, 255, 0.72);
@@ -32,6 +32,14 @@
             --color-card-shadow-hover: rgba(0, 0, 0, 0.08);
             --color-footer-bg: #1d1d1f;
             --color-footer-text: #a1a1a6;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --glass-blur: blur(16px) saturate(180%);
+            --color-bg-alt-translucent: rgba(245, 245, 247, 0.85);
+            --section-bg-opacity: 0.06;
+            --section-bg-opacity-subtle: 0.06;
+            --hero-bg-opacity: 0.18;
+            --card-bg: rgba(255, 255, 255, 0.92);
         }
 
         /* ===== Dark Theme Override ===== */
@@ -42,11 +50,11 @@
             --color-text: #f5f5f7;
             --color-text-secondary: #a1a1a6;
             --color-text-tertiary: #6e6e73;
-            --color-accent: #2997ff;
-            --color-accent-hover: #40a8ff;
-            --color-accent-light: #64b5f6;
-            --color-accent-soft: rgba(41, 151, 255, 0.12);
-            --color-accent-glow: rgba(41, 151, 255, 0.25);
+            --color-accent: #8BA4BE;
+            --color-accent-hover: #A4B9CF;
+            --color-accent-light: #ABC4DE;
+            --color-accent-soft: rgba(139, 164, 190, 0.12);
+            --color-accent-glow: rgba(139, 164, 190, 0.25);
             --color-border: rgba(255, 255, 255, 0.08);
             --color-border-card: rgba(255, 255, 255, 0.06);
             --color-header-bg: rgba(29, 29, 31, 0.72);
@@ -55,6 +63,13 @@
             --color-card-shadow-hover: rgba(0, 0, 0, 0.3);
             --color-footer-bg: #000000;
             --color-footer-text: #6e6e73;
+            --glass-bg: rgba(45, 45, 47, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --color-bg-alt-translucent: rgba(45, 45, 47, 0.85);
+            --section-bg-opacity: 0.12;
+            --section-bg-opacity-subtle: 0.08;
+            --hero-bg-opacity: 0.28;
+            --card-bg: rgba(45, 45, 47, 0.92);
         }
 
         /* Auto dark theme from OS (before JS loads, prevents flash) */
@@ -66,11 +81,11 @@
                 --color-text: #f5f5f7;
                 --color-text-secondary: #a1a1a6;
                 --color-text-tertiary: #6e6e73;
-                --color-accent: #2997ff;
-                --color-accent-hover: #40a8ff;
-                --color-accent-light: #64b5f6;
-                --color-accent-soft: rgba(41, 151, 255, 0.12);
-                --color-accent-glow: rgba(41, 151, 255, 0.25);
+                --color-accent: #8BA4BE;
+                --color-accent-hover: #A4B9CF;
+                --color-accent-light: #ABC4DE;
+                --color-accent-soft: rgba(139, 164, 190, 0.12);
+                --color-accent-glow: rgba(139, 164, 190, 0.25);
                 --color-border: rgba(255, 255, 255, 0.08);
                 --color-border-card: rgba(255, 255, 255, 0.06);
                 --color-header-bg: rgba(29, 29, 31, 0.72);
@@ -79,6 +94,13 @@
                 --color-card-shadow-hover: rgba(0, 0, 0, 0.3);
                 --color-footer-bg: #000000;
                 --color-footer-text: #6e6e73;
+                --glass-bg: rgba(45, 45, 47, 0.6);
+                --glass-border: rgba(255, 255, 255, 0.08);
+                --color-bg-alt-translucent: rgba(45, 45, 47, 0.85);
+                --section-bg-opacity: 0.12;
+                --section-bg-opacity-subtle: 0.08;
+                --hero-bg-opacity: 0.28;
+                --card-bg: rgba(45, 45, 47, 0.92);
             }
         }
 
@@ -102,7 +124,7 @@
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.4s ease;
         }
 
         a {
@@ -133,7 +155,7 @@
         }
 
         .section-alt {
-            background: var(--color-bg-alt);
+            background: var(--color-bg-alt-translucent);
             transition: background-color 0.4s ease;
         }
 
@@ -273,7 +295,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(-4px);
-            transition: all 0.2s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
             pointer-events: none;
             z-index: 1001;
         }
@@ -308,7 +330,7 @@
             font-size: 13px;
             font-weight: 500;
             color: var(--color-text-secondary);
-            transition: all 0.15s ease;
+            transition: background-color 0.15s ease, color 0.15s ease;
             border: none;
             background: none;
             width: 100%;
@@ -350,7 +372,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             flex-shrink: 0;
         }
         .accent-toggle:hover {
@@ -379,7 +401,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(-4px);
-            transition: all 0.2s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
             pointer-events: none;
             z-index: 1001;
         }
@@ -412,7 +434,7 @@
             border-radius: 50%;
             border: 2px solid white;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             padding: 0;
             outline: none;
@@ -486,7 +508,7 @@
             font-size: 15px;
             font-weight: 500;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
             cursor: pointer;
             border: none;
         }
@@ -549,9 +571,21 @@
             flex-shrink: 0;
         }
 
+        /* ===== Hero Glass Card ===== */
+        .hero-glass-card {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 48px 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+
         /* ===== About ===== */
         .about-content {
-            max-width: 720px;
+            max-width: 980px;
         }
 
         .about-text {
@@ -560,6 +594,23 @@
             color: var(--color-text);
             margin-bottom: 40px;
             font-weight: 300;
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        :root:not([data-theme="dark"]) .about-text {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-text.revealed:hover,
+        .about-text:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+        }
+
+        [data-theme="dark"] .about-text.revealed:hover,
+        [data-theme="dark"] .about-text:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .info-grid {
@@ -568,13 +619,57 @@
             gap: 24px;
         }
 
+        .about-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .about-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-col-location {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .about-lang-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
         .info-card {
             background: var(--color-surface);
             border-radius: 16px;
             padding: 24px;
             box-shadow: 0 1px 3px var(--color-card-shadow);
             border: 1px solid var(--color-border);
-            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: background-color 0.4s ease, border-color 0.4s ease;
+        }
+
+        .about-columns .info-card {
+            transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+        }
+
+        :root:not([data-theme="dark"]) .about-columns .info-card {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-columns .info-card.revealed:hover,
+        .about-columns .info-card:hover {
+            transform: translateY(-4px) !important;
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+        }
+
+        :root:not([data-theme="dark"]) .about-columns .info-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .info-card-label {
@@ -626,7 +721,7 @@
             font-size: 13px;
             font-weight: 400;
             color: var(--color-text);
-            transition: all 0.2s ease;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
         .pill:hover {
@@ -681,12 +776,13 @@
             padding: 28px;
             box-shadow: 0 1px 3px var(--color-card-shadow);
             border: 1px solid var(--color-border);
-            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
+            transition: transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
         }
 
         .timeline-card:hover {
             box-shadow: 0 4px 16px var(--color-card-shadow-hover);
             transform: translateY(-2px);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
         }
 
         .timeline-header {
@@ -762,7 +858,7 @@
             padding: 28px;
             box-shadow: 0 1px 3px var(--color-card-shadow);
             border: 1px solid var(--color-border);
-            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
+            transition: transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
             display: flex;
             flex-direction: column;
         }
@@ -770,6 +866,7 @@
         .project-card:hover {
             box-shadow: 0 4px 16px var(--color-card-shadow-hover);
             transform: translateY(-2px);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
         }
 
         .project-name {
@@ -820,7 +917,7 @@
             margin-bottom: 16px;
             box-shadow: 0 1px 3px var(--color-card-shadow);
             border: 1px solid var(--color-border);
-            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: background-color 0.4s ease, border-color 0.4s ease;
         }
 
         .edu-entry:last-child {
@@ -854,7 +951,7 @@
             border-radius: 16px;
             border: 1px solid var(--color-border);
             box-shadow: 0 1px 3px var(--color-card-shadow);
-            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: background-color 0.4s ease, border-color 0.4s ease;
         }
 
         .teaching-note-title {
@@ -868,6 +965,112 @@
             font-size: 15px;
             color: var(--color-text-secondary);
             line-height: 1.6;
+        }
+
+        /* ===== Section Background Images ===== */
+        #hero,
+        #skills,
+        #experience,
+        #projects,
+        #education {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before,
+        #skills::before,
+        #experience::before,
+        #projects::before,
+        #education::before {
+            content: '';
+            position: absolute;
+            /* Extend beyond section bounds to prevent gaps during parallax */
+            top: -15%;
+            left: 0;
+            right: 0;
+            height: 130%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            transform: translateY(var(--parallax-offset, 0px));
+        }
+
+        /* will-change added dynamically via JS when section is in viewport */
+        .parallax-active::before {
+            will-change: transform;
+        }
+
+        #hero::before {
+            background-image: url('bg-hero-light.jpg');
+            opacity: var(--hero-bg-opacity);
+            background-size: 115%;
+        }
+
+        [data-theme="dark"] #hero::before {
+            background-image: url('bg-hero-dark-mac.jpg');
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) #hero::before {
+                background-image: url('bg-hero-dark-mac.jpg');
+            }
+        }
+
+        #skills::before {
+            background-image: url('bg-skills.jpg');
+            opacity: var(--section-bg-opacity);
+        }
+
+        #experience::before {
+            background-image: url('bg-experience.jpg');
+            opacity: var(--section-bg-opacity-subtle);
+        }
+
+        #projects::before {
+            background-image: url('bg-projects.jpg');
+            opacity: var(--section-bg-opacity-subtle);
+        }
+
+        #education::before {
+            background-image: url('bg-education.jpg');
+            opacity: var(--section-bg-opacity);
+        }
+
+        /* Ensure content sits above bg images */
+        #hero > .container,
+        #skills > .container,
+        #experience > .container,
+        #projects > .container,
+        #education > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== Card Backgrounds (opaque, no backdrop-filter for performance) ===== */
+        .timeline-card,
+        .project-card,
+        .info-card,
+        .skills-group,
+        .edu-entry,
+        .teaching-note {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .about-text {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .skills-group {
+            border-radius: 16px;
+            padding: 20px;
         }
 
         /* ===== Footer ===== */
@@ -987,6 +1190,11 @@
                 font-size: 17px;
             }
 
+            .hero-glass-card {
+                padding: 32px 20px;
+                border-radius: 20px;
+            }
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -996,8 +1204,22 @@
                 grid-template-columns: 1fr;
             }
 
+            .about-columns {
+                grid-template-columns: 1fr;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* On mobile, disable bg parallax transform (JS won't run either) */
+            #hero::before,
+            #skills::before,
+            #experience::before,
+            #projects::before,
+            #education::before {
+                transform: none;
+                will-change: auto;
             }
 
             .footer-top {
@@ -1063,7 +1285,7 @@
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.35s ease-out, transform 0.35s ease-out;
         }
 
         .reveal.revealed {
@@ -1089,7 +1311,7 @@
         }
 
         .pill.skill-animate.skill-visible {
-            animation: skillBadgePop 0.4s ease-out forwards;
+            animation: skillBadgePop 0.25s ease-out forwards;
         }
 
         /* ===== Animation: Typing Cursor ===== */
@@ -1137,31 +1359,31 @@
 
         .parallax-shape {
             position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.35;
         }
 
         .parallax-shape-1 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
-            top: -100px;
-            right: -100px;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 55%);
+            opacity: 0.12;
+            top: -300px;
+            right: -300px;
         }
 
         .parallax-shape-2 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, var(--color-accent-soft) 0%, transparent 70%);
-            bottom: -80px;
-            left: -80px;
+            width: 875px;
+            height: 875px;
+            background: radial-gradient(circle, var(--color-accent-soft) 0%, transparent 55%);
+            opacity: 0.12;
+            bottom: -280px;
+            left: -280px;
         }
 
         .parallax-shape-3 {
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+            width: 625px;
+            height: 625px;
+            background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 55%);
+            opacity: 0.12;
             top: 40%;
             left: 50%;
             transform: translateX(-50%);
@@ -1192,6 +1414,16 @@
 
             .parallax-bg {
                 display: none;
+            }
+
+            /* Disable background image parallax for reduced motion */
+            #hero::before,
+            #skills::before,
+            #experience::before,
+            #projects::before,
+            #education::before {
+                transform: none !important;
+                will-change: auto;
             }
         }
 
@@ -1286,41 +1518,43 @@
             <div class="parallax-shape parallax-shape-3"></div>
         </div>
         <div class="container">
-            <img src="ava.jpeg" alt="Andreas Maier" class="hero-avatar">
-            <h1 class="hero-name">Andreas Maier</h1>
-            <p class="hero-title typing-cursor" id="heroTitle">iOS Engineer</p>
-            <p class="hero-subtitle">Senior iOS Engineer. 13+ years shipping apps to millions.</p>
-            <div class="hero-buttons">
-                <a href="cv-short.html" class="btn btn-primary" target="_blank" rel="noopener">
-                    <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M8 1v10m0 0l-3.5-3.5M8 11l3.5-3.5M2 13h12"/>
-                    </svg>
-                    Short CV
-                </a>
-                <a href="cv-full.html" class="btn btn-secondary" target="_blank" rel="noopener">
-                    <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M8 1v10m0 0l-3.5-3.5M8 11l3.5-3.5M2 13h12"/>
-                    </svg>
-                    Full CV
-                </a>
-            </div>
-            <div class="social-links">
-                <a href="mailto:hello@mrmaier.com" title="Email">
-                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                    Email
-                </a>
-                <a href="https://linkedin.com/in/andreymayer/" target="_blank" rel="noopener" title="LinkedIn">
-                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4.477 3a2 2 0 10-.004 4 2 2 0 00.004-4zm-1.5 5h3v9h-3V8zm5.5 0h2.878v1.233h.041c.4-.756 1.379-1.554 2.838-1.554C17.2 7.679 18 9.293 18 11.693V17h-3v-4.694c0-1.12-.02-2.56-1.56-2.56-1.562 0-1.801 1.22-1.801 2.48V17h-3V8z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/Dronnn" target="_blank" rel="noopener" title="GitHub">
-                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/></svg>
-                    GitHub
-                </a>
-                <a href="https://t.me/AndreasRobertMaier" target="_blank" rel="noopener" title="Telegram">
-                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18.92 2.23a1.07 1.07 0 00-1.12-.2L2.18 8.58a1.07 1.07 0 00.06 2l3.9 1.27 1.5 4.83a1.07 1.07 0 001.8.37l2.17-2.24 3.86 2.87a1.07 1.07 0 001.68-.66l2.87-13.5a1.07 1.07 0 00-.1-.79zM8.87 12.39l-.39 3.12-1.14-3.67 7.42-5.97-5.89 6.52z"/></svg>
-                    Telegram
-                </a>
+            <div class="hero-glass-card">
+                <img src="ava.jpeg" alt="Andreas Maier" class="hero-avatar">
+                <h1 class="hero-name">Andreas Maier</h1>
+                <p class="hero-title typing-cursor" id="heroTitle">iOS Engineer</p>
+                <p class="hero-subtitle">Senior iOS Engineer. 13+ years shipping apps to millions.</p>
+                <div class="hero-buttons">
+                    <a href="cv-short.html" class="btn btn-primary" target="_blank" rel="noopener">
+                        <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M8 1v10m0 0l-3.5-3.5M8 11l3.5-3.5M2 13h12"/>
+                        </svg>
+                        Short CV
+                    </a>
+                    <a href="cv-full.html" class="btn btn-secondary" target="_blank" rel="noopener">
+                        <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M8 1v10m0 0l-3.5-3.5M8 11l3.5-3.5M2 13h12"/>
+                        </svg>
+                        Full CV
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:hello@mrmaier.com" title="Email">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                        Email
+                    </a>
+                    <a href="https://linkedin.com/in/andreymayer/" target="_blank" rel="noopener" title="LinkedIn">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4.477 3a2 2 0 10-.004 4 2 2 0 00.004-4zm-1.5 5h3v9h-3V8zm5.5 0h2.878v1.233h.041c.4-.756 1.379-1.554 2.838-1.554C17.2 7.679 18 9.293 18 11.693V17h-3v-4.694c0-1.12-.02-2.56-1.56-2.56-1.562 0-1.801 1.22-1.801 2.48V17h-3V8z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Dronnn" target="_blank" rel="noopener" title="GitHub">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://t.me/AndreasRobertMaier" target="_blank" rel="noopener" title="Telegram">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18.92 2.23a1.07 1.07 0 00-1.12-.2L2.18 8.58a1.07 1.07 0 00.06 2l3.9 1.27 1.5 4.83a1.07 1.07 0 001.8.37l2.17-2.24 3.86 2.87a1.07 1.07 0 001.68-.66l2.87-13.5a1.07 1.07 0 00-.1-.79zM8.87 12.39l-.39 3.12-1.14-3.67 7.42-5.97-5.89 6.52z"/></svg>
+                        Telegram
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1336,18 +1570,28 @@
                 <p class="about-text">
                     Senior iOS Engineer with 13+ years building production apps across fintech, telecom, AR, and edtech. Shipped apps serving millions of daily users at Alfabank, Megafon, and Yandex. Passionate about clean architecture, mentoring, and shipping polished user experiences.
                 </p>
-                <div class="info-grid">
-                    <div class="info-card">
+                <div class="about-columns">
+                    <div class="about-col info-card">
                         <div class="info-card-label">Location</div>
-                        <div class="info-card-value">Yerevan, Armenia</div>
+                        <div class="info-card-value about-col-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Yerevan, Armenia</span>
+                        </div>
                     </div>
-                    <div class="info-card">
+                    <div class="about-col info-card">
                         <div class="info-card-label">Languages</div>
-                        <div class="info-card-value">
-                            English (B2-C1)<br>
-                            Russian (Native)<br>
-                            German (Elementary)<br>
-                            Armenian (Elementary)
+                        <ul class="about-lang-list">
+                            <li>English (B2-C1)</li>
+                            <li>German (A2-B1)</li>
+                            <li>Armenian (Elementary)</li>
+                            <li>Russian (Native)</li>
+                        </ul>
+                    </div>
+                    <div class="about-col info-card">
+                        <div class="info-card-label">Programming Languages</div>
+                        <div class="skills-pills" style="margin-top: 8px;">
+                            <span class="pill">Swift</span>
+                            <span class="pill">Objective-C</span>
                         </div>
                     </div>
                 </div>
@@ -1858,16 +2102,16 @@
         var ACCENT_KEY = 'accent-color';
 
         var accentColors = [
-            { name: 'blue', value: '#0071e3', dark: '#2997ff' },
-            { name: 'indigo', value: '#6366F1', dark: '#818CF8' },
-            { name: 'teal', value: '#0D9488', dark: '#2DD4BF' },
+            { name: 'slate', value: '#4A6380', dark: '#8BA4BE' },
+            { name: 'blue', value: '#1E88E5', dark: '#64B5F6' },
+            { name: 'indigo', value: '#5E35B1', dark: '#B39DDB' },
+            { name: 'teal', value: '#00897B', dark: '#4DB6AC' },
             { name: 'emerald', value: '#059669', dark: '#34D399' },
             { name: 'amber', value: '#D97706', dark: '#FBBF24' },
             { name: 'orange', value: '#EA580C', dark: '#FB923C' },
             { name: 'rose', value: '#E11D48', dark: '#FB7185' },
             { name: 'pink', value: '#DB2777', dark: '#F472B6' },
-            { name: 'purple', value: '#7C3AED', dark: '#A78BFA' },
-            { name: 'slate', value: '#475569', dark: '#94A3B8' }
+            { name: 'purple', value: '#7C3AED', dark: '#A78BFA' }
         ];
 
         function hexToRgb(hex) {
@@ -1912,8 +2156,8 @@
         function getAccentIndex() {
             try {
                 var idx = parseInt(localStorage.getItem(ACCENT_KEY), 10);
-                return (isNaN(idx) || idx < 0 || idx > 9) ? -1 : idx;
-            } catch(e) { return -1; }
+                return (isNaN(idx) || idx < 0 || idx > 9) ? 0 : idx;
+            } catch(e) { return 0; }
         }
 
         function getSystemPreference() {
@@ -1922,10 +2166,7 @@
 
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
-            var accentIdx = getAccentIndex();
-            if (accentIdx >= 0) {
-                applyAccent(accentIdx);
-            }
+            applyAccent(getAccentIndex());
         }
 
         // --- 3-mode theme system: 'light', 'dark', 'system' ---
@@ -1971,11 +2212,8 @@
         currentMode = storedMode || 'system';
         applyTheme(getEffectiveTheme(currentMode));
 
-        // Apply saved accent on initial load
-        var savedAccent = getAccentIndex();
-        if (savedAccent >= 0) {
-            applyAccent(savedAccent);
-        }
+        // Apply accent on initial load (defaults to Slate if nothing saved)
+        applyAccent(getAccentIndex());
 
         // System preference change listener (with fallback for older Safari)
         var darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
@@ -2055,11 +2293,8 @@
                     accentDropdown.appendChild(swatch);
                 }
 
-                // Mark current accent as active
-                var currentActive = getAccentIndex();
-                if (currentActive >= 0) {
-                    updateActiveSwatches(currentActive);
-                }
+                // Mark current accent as active (defaults to 0 = Slate)
+                updateActiveSwatches(getAccentIndex());
 
                 // Click handler on swatches
                 accentDropdown.addEventListener('click', function(e) {
@@ -2174,7 +2409,7 @@
                     );
                     cards.forEach(function(card, index) {
                         card.classList.add('reveal');
-                        card.style.transitionDelay = (index * 70) + 'ms';
+                        card.style.transitionDelay = (index * 35) + 'ms';
                     });
                 });
 
@@ -2215,7 +2450,7 @@
                 // Add animation class and set stagger delay
                 pills.forEach(function(pill, index) {
                     pill.classList.add('skill-animate');
-                    pill.style.animationDelay = (index * 40) + 'ms';
+                    pill.style.animationDelay = (index * 20) + 'ms';
                 });
 
                 var skillObserver = new IntersectionObserver(function(entries) {
@@ -2239,12 +2474,16 @@
                3. TYPING EFFECT IN HERO
                Cycles through phrases, typing and deleting.
                Blinking cursor via CSS ::after pseudo-element.
+               Pauses when hero is off-screen (IntersectionObserver).
             ------------------------------------------------------- */
             function initTypingEffect() {
                 if (prefersReducedMotion) return;
 
                 var heroTitle = document.getElementById('heroTitle');
                 if (!heroTitle) return;
+
+                var heroSection = document.getElementById('hero');
+                if (!heroSection) return;
 
                 var phrases = ['iOS Engineer', 'Swift Expert', '13+ Years of Experience'];
                 var currentPhraseIndex = 0;
@@ -2253,39 +2492,60 @@
                 var typingSpeed = 80;
                 var deletingSpeed = 40;
                 var pauseBetween = 2000;
+                var typingTimer = null;
+                var heroVisible = true;
 
                 function type() {
+                    if (!heroVisible) return; // Pause when off-screen
+
                     var currentPhrase = phrases[currentPhraseIndex];
 
                     if (isDeleting) {
-                        // Delete characters
                         currentCharIndex--;
                         heroTitle.textContent = currentPhrase.substring(0, currentCharIndex);
 
                         if (currentCharIndex === 0) {
                             isDeleting = false;
                             currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                            setTimeout(type, 300); // Small pause before typing next phrase
+                            typingTimer = setTimeout(type, 300);
                             return;
                         }
-                        setTimeout(type, deletingSpeed);
+                        typingTimer = setTimeout(type, deletingSpeed);
                     } else {
-                        // Type characters
                         currentCharIndex++;
                         heroTitle.textContent = currentPhrase.substring(0, currentCharIndex);
 
                         if (currentCharIndex === currentPhrase.length) {
                             isDeleting = true;
-                            setTimeout(type, pauseBetween); // Pause at full phrase
+                            typingTimer = setTimeout(type, pauseBetween);
                             return;
                         }
-                        setTimeout(type, typingSpeed);
+                        typingTimer = setTimeout(type, typingSpeed);
                     }
                 }
 
+                // IntersectionObserver to pause/resume typing when hero leaves/enters viewport
+                var typingObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            if (!heroVisible) {
+                                heroVisible = true;
+                                type(); // Resume
+                            }
+                        } else {
+                            heroVisible = false;
+                            if (typingTimer) {
+                                clearTimeout(typingTimer);
+                                typingTimer = null;
+                            }
+                        }
+                    });
+                }, { threshold: 0 });
+
+                typingObserver.observe(heroSection);
+
                 // Start with a brief pause, then begin the cycle
-                // First show the initial text, then start cycling
-                setTimeout(function() {
+                typingTimer = setTimeout(function() {
                     isDeleting = true;
                     currentCharIndex = phrases[0].length;
                     type();
@@ -2293,55 +2553,130 @@
             }
 
             /* -------------------------------------------------------
-               4. PARALLAX BACKGROUND
-               Hero background shapes move at 0.3-0.5x scroll speed.
-               Uses transform: translate3d() for GPU acceleration.
-               Disabled on mobile via prefers-reduced-motion check
-               and screen width check.
+               4. MERGED PARALLAX SYSTEM
+               Single scroll handler for both:
+               - Hero gradient shapes (0.4x scroll speed)
+               - Section background images (0.2x via --parallax-offset)
+               Caches section positions on init and resize (debounced).
+               Manages will-change dynamically via .parallax-active class.
+               Disabled on mobile (<= 768px) and reduced motion.
             ------------------------------------------------------- */
-            function initParallax() {
+            function initAllParallax() {
                 if (prefersReducedMotion) return;
 
                 var parallaxBg = document.getElementById('parallaxBg');
-                if (!parallaxBg) return;
-
                 var heroSection = document.getElementById('hero');
+                var sections = document.querySelectorAll('#hero, #skills, #experience, #projects, #education');
+                if (!sections.length) return;
+
+                var bgParallaxFactor = 0.2;
+                var heroParallaxFactor = 0.4;
                 var ticking = false;
+                var enabled = false;
 
-                function updateParallax() {
-                    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-                    var heroHeight = heroSection.offsetHeight;
+                // Cached section positions (updated on init and resize)
+                var sectionCache = [];
 
-                    // Only apply parallax while hero is in view
-                    if (scrollY <= heroHeight) {
-                        var offset = scrollY * 0.4; // 0.4x scroll speed
-                        parallaxBg.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+                function cacheSectionPositions() {
+                    sectionCache = [];
+                    for (var i = 0; i < sections.length; i++) {
+                        sectionCache.push({
+                            el: sections[i],
+                            top: sections[i].offsetTop,
+                            height: sections[i].offsetHeight
+                        });
                     }
+                }
+
+                // IntersectionObserver for dynamic will-change on sections
+                var willChangeObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('parallax-active');
+                        } else {
+                            entry.target.classList.remove('parallax-active');
+                        }
+                    });
+                }, { rootMargin: '100px 0px' });
+
+                for (var i = 0; i < sections.length; i++) {
+                    willChangeObserver.observe(sections[i]);
+                }
+
+                function updateAllParallax() {
+                    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    var windowHeight = window.innerHeight;
+
+                    // 1. Hero gradient shapes
+                    if (parallaxBg && heroSection) {
+                        var heroHeight = heroSection.offsetHeight;
+                        if (scrollY <= heroHeight) {
+                            var heroOffset = scrollY * heroParallaxFactor;
+                            parallaxBg.style.transform = 'translate3d(0, ' + heroOffset + 'px, 0)';
+                        }
+                    }
+
+                    // 2. Section background images
+                    for (var i = 0; i < sectionCache.length; i++) {
+                        var cached = sectionCache[i];
+                        var sectionBottom = cached.top + cached.height;
+
+                        // Only compute for sections in or near viewport
+                        if (sectionBottom < scrollY - windowHeight || cached.top > scrollY + windowHeight * 2) {
+                            continue;
+                        }
+
+                        var relativeScroll = scrollY - cached.top;
+                        var offset = relativeScroll * bgParallaxFactor;
+                        cached.el.style.setProperty('--parallax-offset', offset + 'px');
+                    }
+
                     ticking = false;
                 }
 
                 function onScroll() {
                     if (!ticking) {
-                        window.requestAnimationFrame(updateParallax);
+                        window.requestAnimationFrame(updateAllParallax);
                         ticking = true;
                     }
                 }
 
-                // Disable parallax on narrow screens (mobile) for performance
-                if (window.innerWidth > 768) {
-                    window.addEventListener('scroll', onScroll, { passive: true });
+                function enable() {
+                    if (window.innerWidth > 768 && !enabled) {
+                        cacheSectionPositions();
+                        window.addEventListener('scroll', onScroll, { passive: true });
+                        enabled = true;
+                        updateAllParallax();
+                    }
                 }
 
-                // Re-check on resize
+                function disable() {
+                    if (enabled) {
+                        window.removeEventListener('scroll', onScroll);
+                        enabled = false;
+                        // Reset hero shapes
+                        if (parallaxBg) {
+                            parallaxBg.style.transform = 'translate3d(0, 0, 0)';
+                        }
+                        // Reset all bg offsets
+                        for (var i = 0; i < sections.length; i++) {
+                            sections[i].style.setProperty('--parallax-offset', '0px');
+                        }
+                    }
+                }
+
+                enable();
+
+                // Single debounced resize handler
                 var resizeTimer;
                 window.addEventListener('resize', function() {
                     clearTimeout(resizeTimer);
                     resizeTimer = setTimeout(function() {
                         if (window.innerWidth <= 768) {
-                            window.removeEventListener('scroll', onScroll);
-                            parallaxBg.style.transform = 'translate3d(0, 0, 0)';
+                            disable();
                         } else {
-                            window.addEventListener('scroll', onScroll, { passive: true });
+                            cacheSectionPositions();
+                            if (!enabled) enable();
                         }
                     }, 200);
                 });
@@ -2360,7 +2695,7 @@
                 initScrollReveal();
                 initSkillWave();
                 initTypingEffect();
-                initParallax();
+                initAllParallax();
                 initDurationCalc();
             }
 
