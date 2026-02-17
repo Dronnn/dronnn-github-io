@@ -1813,7 +1813,7 @@
                         endMonth = months[endMatch[1]];
                         endYear = parseInt(endMatch[2]);
                     }
-                    var totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
+                    var totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
                     if (totalMonths < 1) totalMonths = 1;
                     var years = Math.floor(totalMonths / 12);
                     var mos = totalMonths % 12;
