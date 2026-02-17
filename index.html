@@ -1793,25 +1793,35 @@
                 initDurationCalc();
             }
 
-            /* === Duration calculator for "Present" dates === */
+            /* === Duration calculator for all dates === */
             function initDurationCalc() {
                 var months = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
                 document.querySelectorAll('.timeline-date').forEach(function(el) {
                     var text = el.textContent.trim();
-                    if (text.indexOf('Present') === -1) return;
-                    var match = text.match(/^(\w+)\s+(\d{4})/);
-                    if (!match) return;
-                    var startMonth = months[match[1]];
-                    var startYear = parseInt(match[2]);
-                    var now = new Date();
-                    var totalMonths = (now.getFullYear() - startYear) * 12 + (now.getMonth() - startMonth);
+                    var startMatch = text.match(/^(\w+)\s+(\d{4})/);
+                    if (!startMatch) return;
+                    var startMonth = months[startMatch[1]];
+                    var startYear = parseInt(startMatch[2]);
+                    var endMonth, endYear;
+                    if (text.indexOf('Present') !== -1) {
+                        var now = new Date();
+                        endMonth = now.getMonth();
+                        endYear = now.getFullYear();
+                    } else {
+                        var endMatch = text.match(/-\s*(\w+)\s+(\d{4})/);
+                        if (!endMatch) return;
+                        endMonth = months[endMatch[1]];
+                        endYear = parseInt(endMatch[2]);
+                    }
+                    var totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
+                    if (totalMonths < 1) totalMonths = 1;
                     var years = Math.floor(totalMonths / 12);
                     var mos = totalMonths % 12;
                     var parts = [];
-                    if (years > 0) parts.push(years + (years === 1 ? ' year' : ' years'));
-                    if (mos > 0) parts.push(mos + (mos === 1 ? ' mo' : ' mos'));
+                    if (years > 0) parts.push(years + (years === 1 ? ' yr' : ' yrs'));
+                    if (mos > 0) parts.push(mos + ' mo');
                     if (parts.length > 0) {
-                        el.textContent = text + ' (' + parts.join(' ') + ')';
+                        el.textContent = text + ' \u00b7 ' + parts.join(' ');
                     }
                 });
             }
